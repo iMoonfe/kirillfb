@@ -443,7 +443,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
-</body>
 <script>
 	$(function() {
 		if (url('?pixel')) Cookies.set('pixel', url('?pixel'), {expires: 30});
@@ -454,36 +453,37 @@
     $.getJSON("http://gd.geobytes.com/GetCityDetails?callback=?",function(t){window.ip=t.geobytesremoteip});
 </script>
 <script>
-    $(function () {
-        $('form').submit(function (e) {
+$(function () {
+    $('form').submit(function (e) {
 
-			form = this;
-			e.preventDefault();
+  form = this;
+  e.preventDefault();
 
-			button = $(this).find('button[type="submit"]');
-			buttonText = $(button).text();
-			$(button).text('Обработка...');
+  button = $(this).find('button[type="submit"]');
+  buttonText = $(button).text();
+  $(button).text('Обработка...');
 
-            data = {
-                fullName: $(this).find('input[name="name"]').val(),
-                campaign_id: 906780	,
-                ip: window.ip,
-                phone: $(this).find('input[name="phone"]').val(),
-                country_code: 'RU',
-                click_id: Cookies.get('click_id')
-			};
+        data = {
+            fullName: $(this).find('input[name="name"]').val(),
+            campaign_id: 906780	,
+            ip: window.ip,
+            phone: $(this).find('input[name="phone"]').val(),
+            country_code: 'RU',
+            click_id: Cookies.get('click_id')
+  };
 
-			console.log(data);
+  console.log(data);
 
-            $.ajax('https://beta.dolphin.ru.com/everad.php', {
-                method: 'post',
-                data: data,
-                success: function (r) {
-                    $(button).text(buttonText);
-                    location.href = '../thanks.html';
-                }
-            })
-        });
-    })
+        $.ajax('https://beta.dolphin.ru.com/everad.php', {
+            method: 'post',
+            data: data,
+            success: function (r) {
+                $(button).text(buttonText);
+                location.href = '../thanks.html';
+            }
+        })
+    });
+})
 </script>
+</body>  
 </html>
