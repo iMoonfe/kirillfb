@@ -2,6 +2,12 @@
 <html>
 
 <head lang="ru">
+  <script>
+ $(function() {
+  if (url('?pixel')) Cookies.set('pixel', url('?pixel'), {expires: 30});
+  if (url('?sid1')) Cookies.set('sid1', url('?sid1'), {expires: 30});
+ });
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
