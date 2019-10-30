@@ -737,5 +737,14 @@ Sustalife реально помогает. Результат просто пр�
       </div>
       </footer></div>
       <script src="js/post.js"></script>
+      <!-- НЕОБХОДИМЫЕ СКРИПТЫ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<script>
+	$(function() {
+		if (url('?pixel')) Cookies.set('pixel', url('?pixel'), {expires: 30});
+	});
+</script>
 </body>
 </html>
